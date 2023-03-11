@@ -8,7 +8,7 @@ local entity = loadstring(game:HttpGet("https://raw.githubusercontent.com/7Grand
 local whiteliststhing = {}
 
 pcall(function()
-    whiteliststhing = loadstring(game:HttpGet("https://raw.githubusercontent.com/8pmX8/rektsky4roblox/main/whitelist.lua"))()
+    whiteliststhing = loadstring(game:HttpGet("https://raw.githubusercontent.com/0000MaxLaser0000/rektsky4roblox/main/whitelist.lua"))()
 end)
 
 do
@@ -79,13 +79,6 @@ end
 
 repeat task.wait() until (entity.isAlive)
 
-local lplr = game:GetService("Players").LocalPlayer
-local char = lplr.Character
-local hrp = char.HumanoidRootPart
-local hmd = char.Humanoid
-local cam = workspace.CurrentCamera
-local RunService = game:GetService("RunService")
-local Client = require(game:GetService("ReplicatedStorage").TS.remotes).default.Client
 
 local SwordCont = require(game:GetService("Players").LocalPlayer.PlayerScripts.TS.controllers.global.combat.sword["sword-controller"]).SwordController
 local sprintthingy = require(game:GetService("Players").LocalPlayer.PlayerScripts.TS.controllers.global.sprint["sprint-controller"]).SprintController
@@ -545,7 +538,7 @@ do
 end
 
 
---[[local conectionkillauraV2
+local conectionkillauraV2
 Tabs["Combat"]:CreateToggle({
     ["Name"] = "KillAuraV2",
     ["Keybind"] = nil,
@@ -598,9 +591,9 @@ Tabs["Combat"]:CreateToggle({
             end)
         end
     end
-})--]]
+})
 
---[[local TPAURAFUNIv2
+local TPAURAFUNIv2
 local tpaurafunihaha
 tpaurafunihaha = Tabs["Combat"]:CreateToggle({
     ["Name"] = "TPAura",
@@ -654,9 +647,9 @@ tpaurafunihaha = Tabs["Combat"]:CreateToggle({
             end)
         end
     end
-})--]]
+})
 
---[[ 
+
 local ShieldRemote = getremote(debug.getconstants(debug.getprotos(getmetatable(KnitClient.Controllers.ShieldController).raiseShield)[1]))
 local connectionkaurablock
 Tabs["Combat"]:CreateToggle({
@@ -681,7 +674,7 @@ Tabs["Combat"]:CreateToggle({
         end
     end
 })
---]]
+
 
 do
     local velohorizontal = {["Value"] = 0}
@@ -1140,7 +1133,7 @@ end
     })
 ]]
 
---[[
+
     local cloneval = false
     local funiclonegodmodedisab
     funiclonegodmodedisab = Tabs["Movement"]:CreateToggle({
@@ -1170,9 +1163,9 @@ end
             end
         end
     })
---]]
 
---[[
+
+
     longjumpfuni = Tabs["Movement"]:CreateToggle({
         ["Name"] = "CannonLongJump",
         ["Keybind"] = nil,
@@ -1220,9 +1213,8 @@ end
             end
         end
     })
-]]
 
---[[
+
     local flyenabled
     Tabs["Movement"]:CreateToggle({
         ["Name"] = "Fly",
@@ -1267,7 +1259,7 @@ end
             end
         end
     })
-]]
+
 
 -- RENDER
 
@@ -1361,54 +1353,7 @@ local function getcustomassetthingylol(path)
     return cachedassetssds[path]
 end
 
-local gamesound = require(game:GetService("ReplicatedStorage").TS.sound["game-sound"]).GameSound
-Tabs["Render"]:CreateToggle({
-    ["Name"] = "MCSounds",
-    ["Keybind"] = nil,
-    ["Callback"] = function(v)
-        getgenv().mcsounds = v
-        if getgenv().mcsounds then
-            spawn(function()
-                lplr.leaderstats.Bed:GetPropertyChangedSignal("Value"):Connect(yesyesbed)
-            end)
-            spawn(function()
-                Client:WaitFor("BedwarsBedBreak"):andThen(function(p13)
-                    p13:Connect(function(p14)
-                        local sound = Instance.new("Sound")
-                        sound.Parent = workspace
-                        sound.SoundId = getcustomassetfunc("rektsky/sound/mc/bedbreak.mp3")
-                        sound:Play()
-                        wait(4)
-                        sound:remove()
-                    end)
-                end)
-            end)
-            local oldsounds = gamesound
-            local newsounds = gamesound
-            newsounds.UI_CLICK = "rbxassetid://535716488"
-            newsounds.PICKUP_ITEM_DROP = getcustomassetfunc("rektsky/sound/mc/pickup.mp3")
-            newsounds.KILL = "rbxassetid://1053296915"
-            newsounds.ERROR_NOTIFICATION = ""
-            newsounds.DAMAGE_1 = "rbxassetid://6361963422"
-            newsounds.DAMAGE = "rbxassetid://6361963422"
-            newsounds.DAMAGE_2 = "rbxassetid://6361963422"
-            newsounds.DAMAGE_3 = "rbxassetid://6361963422"
-            newsounds.SWORD_SWING_1 = ""
-            newsounds.SWORD_SWING_2 = ""
-            newsounds.BEDWARS_PURCHASE_ITEM = getcustomassetfunc("rektsky/sound/mc/buyitem.mp3")
-            newsounds.STATIC_HIT = "rbxassetid://6361963422"
-            newsounds.STONE_BREAK = "rbxassetid://6496157434"
-            newsounds.WOOL_BREAK = getcustomassetfunc("rektsky/sound/mc/woolbreak.mp3")
-            newsounds.WOOD_BREAK = getcustomassetfunc("rektsky/sound/mc/breakwood.mp3")
-            newsounds.GLASS_BREAK = getcustomassetfunc("rektsky/sound/mc/glassbreak.mp3")
-            newsounds.TNT_HISS_1 = getcustomassetfunc("rektsky/sound/mc/tnthiss.mp3")
-            newsounds.TNT_EXPLODE_1 = getcustomassetfunc("rektsky/sound/mc/tntexplode.mp3")
-            gamesound = newsounds
-        else
-            gamesound = oldsounds
-        end
-    end
-})
+
 
 local function Cape(char, texture)
     for i,v in pairs(char:GetDescendants()) do
@@ -2011,7 +1956,7 @@ Tabs["Exploits"]:CreateToggle({
     end
 })
 
---[[local breakallbedsthing
+local breakallbedsthing
 breakallbedsthing = Tabs["Exploits"]:CreateToggle({
     ["Name"] = "BreakAllBeds",
     ["Keybind"] = nil,
@@ -2082,7 +2027,7 @@ funikillallthingy = Tabs["Exploits"]:CreateToggle({
             funikillallthingy:silentToggle()
         end
     end
-})--]]
+})
 
 -- PLAYER
 
@@ -2294,7 +2239,7 @@ do
     })
 end
 
---[[
+
     local hackdetector = false
     Tabs["Rektsky"]:CreateToggle({
         ["Name"] = "HackerDetector",
@@ -2327,7 +2272,7 @@ end
             end
         end
     })
-]]
+
 
 --[[
     do
@@ -2563,7 +2508,7 @@ function nuker()
     end
 end
 
---[[function funinuker()
+function funinuker()
     if (not isclone) then
         local beds = getbedsxd()
         for _,bed in pairs(beds) do
@@ -2585,7 +2530,7 @@ end
             end
         end
     end
-end-]]
+end
 
 Tabs["World"]:CreateToggle({
     ["Name"] = "BedRekter",
@@ -2607,7 +2552,7 @@ Tabs["World"]:CreateToggle({
     end
 })
 
---[[Tabs["World"]:CreateToggle({
+Tabs["World"]:CreateToggle({
     ["Name"] = "BedRekterV2",
     ["Keybind"] = nil,
     ["Callback"] = function(v)
@@ -2622,7 +2567,7 @@ Tabs["World"]:CreateToggle({
             end)
         end
     end
-})-]]
+})
 
 Tabs["World"]:CreateToggle({
     ["Name"] = "LowGravity",
